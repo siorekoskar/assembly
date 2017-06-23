@@ -28,8 +28,9 @@ check_tab:
 
 start:
   cmp %rcx, %rsi
-  je iterate
+  je reset
   mov (%rdi, %rcx, 4), %r9d
+
 
 beforeIter:
   mov $0, %r10
@@ -42,6 +43,10 @@ iter1:
   shl %r10
   inc %r8
   jmp iter1
+
+nextone:
+  inc %rcx
+  jmp start
 
 setmask:
   mov $0, %r8
@@ -57,14 +62,15 @@ reset:
   mov $0, %r11
 
 
+# druga czesc
 
-  
 
 iterate:
   cmp %rsi, %r8
   je putInMax
 
   mov (%rdi, %r8, 4), %r10
+
   mov $0, %rcx
 
   iterate2:
