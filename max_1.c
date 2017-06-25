@@ -28,4 +28,10 @@ int main(){
   long long max1 = max_1_ind(tab1, 7, a1, b1);
   printf("%lld, %lld, %lld\n", *a1, *b1, max1);
 
+  long long tab2 [ 7 ] = {1,8,-3,4,10,6,7};
+  long long* a2 = malloc(sizeof(long long));
+  long long* b2 = malloc(sizeof(long long));
+  long long max2 = max_1_ind(tab2, 7, a2, b2);
+  printf("%lld, %lld, %lld\n", *a2, *b2, max2);
+
 }
